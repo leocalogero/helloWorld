@@ -1,0 +1,74 @@
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans);
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+	flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #141414;
+	font-family: "Droid Sans";
+}
+
+h1 {
+  text-align: center;
+}
+
+.glitch {
+  position: relative;
+  text-decoration: none;
+  font-size: 10vw;
+  color: #DDD;
+  user-select: none;
+}
+.glitch:hover:before {
+  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+}
+.glitch:hover:after {
+  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+}
+.glitch:before, .glitch:after {
+  content: attr(data-hover);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+}
+.glitch:before {
+  z-index: -1;
+  color: #0FF;
+}
+.glitch:after {
+  z-index: -2;
+  color: #F0F;
+}
+
+h2 {
+	color: #d5d5d5;
+	opacity: 0.85;
+  font-size: 2vw;
+	font-family: "Droid Sans";
+	letter-spacing: 0.5px;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-5px, 5px);
+  }
+  40% {
+    transform: translate(-5px, -5px);
+  }
+  60% {
+    transform: translate(5px, 5px);
+  }
+  80% {
+    transform: translate(5px, -5px);
+  }
+  to {
+    transform: translate(0);
+  }
+}
